@@ -17,3 +17,25 @@ love.addEventListener("click", () => {
 close.addEventListener("click", () => {
   wrapper.classList.remove("animation");
 });
+
+
+const imgzhuzhu = document.querySelector('.zhuzhu')
+const btn = document.querySelector('.my-button').addEventListener('click',function(){
+  let width = 0
+  let opacity = 0
+  console.dir(imgzhuzhu.style);
+let timer =  setInterval(() => {
+    width++
+    if(opacity < 100){
+      opacity += 2
+    }
+    if(width >= 55){
+      setTimeout(() => {
+        imgzhuzhu.style.zIndex = '-999'
+      }, 1000);
+      clearInterval(timer)
+    }
+    imgzhuzhu.style.filter = `opacity(${opacity}%)`
+    imgzhuzhu.style.width = `${width}vw`
+  }, 300);
+})
