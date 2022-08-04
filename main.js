@@ -29,7 +29,7 @@ close.addEventListener("click", () => {
 
 const imgzhuzhu = document.querySelector(".zhuzhu");
 const btn = document.querySelector(".my-button");
-imgzhuzhu.src = imgsArr[Math.ceil(Math.random() * imgsArr.length)]
+imgzhuzhu.src = imgsArr[Math.ceil(Math.random() * imgsArr.length - 1)]
 console.log(imgzhuzhu.src);
 class ShowImg {
   constructor(imgDom) {
