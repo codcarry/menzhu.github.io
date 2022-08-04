@@ -37,5 +37,5 @@ let timer =  setInterval(() => {
     }
     imgzhuzhu.style.filter = `opacity(${opacity}%)`
     imgzhuzhu.style.width = `${width}vw`
-  }, 300);
+  }, 500);
 })
