@@ -18,24 +18,46 @@ close.addEventListener("click", () => {
   wrapper.classList.remove("animation");
 });
 
+const imgzhuzhu = document.querySelector(".zhuzhu");
+const btn = document.querySelector(".my-button");
 
-const imgzhuzhu = document.querySelector('.zhuzhu')
-const btn = document.querySelector('.my-button').addEventListener('click',function(){
-  let width = 0
-  let opacity = 0
-  console.dir(imgzhuzhu.style);
-let timer =  setInterval(() => {
-    width++
-    if(opacity < 100){
-      opacity += 2
+class ShowImg {
+  constructor(imgDom) {
+    this.width = 0;
+    this.opacity = 0;
+    this.timerAppear = null;
+    this.timerDisappear = null;
+    this.imgDom = imgDom
+  }
+  appear() {
+    this.timerAppear = setInterval(() => {
+      this.width++;
+      if (this.opacity < 100) {
+        this.opacity += 2;
+      }
+      if (this.width >= 55) {
+        clearInterval(this.timerAppear);
+        btn.innerText = '收下祝福'
+        setTimeout(() => {
+          this.timerDisappear = setInterval(()=>{this.disappear()}, 200);
+        }, 1000);
+      }
+      this.imgDom.style.filter = `opacity(${this.opacity}%)`;
+      this.imgDom.style.width = `${this.width}vw`;
+    }, 100);
+  }
+  disappear() {
+    if (this.width === 0) {
+      clearInterval(this.timerDisappear);
     }
-    if(width >= 55){
-      setTimeout(() => {
-        imgzhuzhu.style.zIndex = '-999'
-      }, 1000);
-      clearInterval(timer)
+    if (this.opacity > 0) {
+      this.opacity -= 2;
     }
-    imgzhuzhu.style.filter = `opacity(${opacity}%)`
-    imgzhuzhu.style.width = `${width}vw`
-  }, 500);
-})
+    this.width -= 1;
+    this.imgDom.style.filter = `opacity(${this.opacity}%)`;
+    this.imgDom.style.width = `${this.width}vw`;
+  }
+}
+
+const showImg = new ShowImg(imgzhuzhu)
+btn.addEventListener('click',()=>{showImg.appear()})
