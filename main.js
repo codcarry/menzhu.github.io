@@ -60,4 +60,13 @@ class ShowImg {
 }
 
 const showImg = new ShowImg(imgzhuzhu)
-btn.addEventListener('click',()=>{showImg.appear()})
+btn.addEventListener('click',()=>{
+  if(btn.innerText === '收下祝福'){
+    close.click()
+    setTimeout(() => {
+      btn.innerText = '好哒~'
+    }, 300);
+    return 
+  }
+  showImg.appear()
+})
