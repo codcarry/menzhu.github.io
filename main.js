@@ -7,6 +7,7 @@
 const love = document.querySelector(".rectangle-love");
 const wrapper = document.querySelector(".rectangle-wrapper");
 const close = document.querySelector(".close");
+const imgsArr = Array(8).fill('').map((item,i)=>`./images/${i}.jpg`)
 love.addEventListener("click", () => {
   if (wrapper.classList.contains("animation")) {
     wrapper.classList.remove("animation");
@@ -20,7 +21,8 @@ close.addEventListener("click", () => {
 
 const imgzhuzhu = document.querySelector(".zhuzhu");
 const btn = document.querySelector(".my-button");
-
+imgzhuzhu.src = imgsArr[Math.floor(Math.random() * imgsArr.length)]
+console.log(imgzhuzhu.src);
 class ShowImg {
   constructor(imgDom) {
     this.width = 0;
@@ -39,7 +41,7 @@ class ShowImg {
         clearInterval(this.timerAppear);
         btn.innerText = '收下祝福'
         setTimeout(() => {
-          this.timerDisappear = setInterval(()=>{this.disappear()}, 200);
+          this.timerDisappear = setInterval(()=>{this.disappear()}, 100);
         }, 1000);
       }
       this.imgDom.style.filter = `opacity(${this.opacity}%)`;
