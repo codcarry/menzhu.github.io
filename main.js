@@ -16,6 +16,7 @@ const wrapper = document.querySelector(".rectangle-wrapper");
 const close = document.querySelector(".close");
 const imgsArr = Array(8).fill('').map((item,i)=>`./images/${i+1}.jpg`)
 love.addEventListener("click", () => {
+  imgzhuzhu.src = imgsArr[Math.floor(Math.random() * imgsArr.length)]
   if (wrapper.classList.contains("animation")) {
     wrapper.classList.remove("animation");
   } else {
@@ -78,8 +79,7 @@ btn.addEventListener('click',()=>{
     }, 300);
     return 
   }
-  imgzhuzhu.src = imgsArr[Math.floor(Math.random() * imgsArr.length)]
   setTimeout(() => {
     showImg.appear()
-  }, 2500);
+  }, 500);
 })
