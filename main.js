@@ -16,7 +16,6 @@ const wrapper = document.querySelector(".rectangle-wrapper");
 const close = document.querySelector(".close");
 const imgsArr = Array(8).fill('').map((item,i)=>`./images/${i+1}.jpg`)
 love.addEventListener("click", () => {
-  imgzhuzhu.src = imgsArr[Math.floor(Math.random() * imgsArr.length)]
   if (wrapper.classList.contains("animation")) {
     wrapper.classList.remove("animation");
   } else {
@@ -25,6 +24,7 @@ love.addEventListener("click", () => {
 });
 
 close.addEventListener("click", () => {
+  imgzhuzhu.src = imgsArr[Math.floor(Math.random() * imgsArr.length)]
   wrapper.classList.remove("animation");
 });
 
