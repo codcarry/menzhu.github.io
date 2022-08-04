@@ -4,6 +4,13 @@
  * @LastEditors: cola
  * @Description:
  */
+const music = document.querySelector('.bg-music')
+document.documentElement.addEventListener('click',function(){
+  console.log(music.muted);
+  if(!music.muted){
+    music.play()
+  }
+})
 const love = document.querySelector(".rectangle-love");
 const wrapper = document.querySelector(".rectangle-wrapper");
 const close = document.querySelector(".close");
@@ -15,13 +22,14 @@ love.addEventListener("click", () => {
     wrapper.classList.add("animation");
   }
 });
+
 close.addEventListener("click", () => {
   wrapper.classList.remove("animation");
 });
 
 const imgzhuzhu = document.querySelector(".zhuzhu");
 const btn = document.querySelector(".my-button");
-imgzhuzhu.src = imgsArr[Math.floor(Math.random() * imgsArr.length)]
+imgzhuzhu.src = imgsArr[Math.ceil(Math.random() * imgsArr.length - 1)]
 console.log(imgzhuzhu.src);
 class ShowImg {
   constructor(imgDom) {
@@ -70,5 +78,8 @@ btn.addEventListener('click',()=>{
     }, 300);
     return 
   }
-  showImg.appear()
+  imgzhuzhu.src = imgsArr[Math.floor(Math.random() * imgsArr.length)]
+  setTimeout(() => {
+    showImg.appear()
+  }, 2500);
 })
