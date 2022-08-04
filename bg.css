@@ -15,7 +15,7 @@
   width: 100%;
 }
 .heart-lg {
-  background: url("https://firebasestorage.googleapis.com/v0/b/codepen-asset.appspot.com/o/valentine-animation%2Fheart-lg.svg?alt=media&token=aabe9399-f03f-44de-9b55-99025b2981a3")
+  background: url("./bg1.svg")
     no-repeat;
   height: 389px;
   width: 438px;
@@ -26,7 +26,7 @@
   z-index: 45;
 }
 .heart-sm {
-  background: url("https://firebasestorage.googleapis.com/v0/b/codepen-asset.appspot.com/o/valentine-animation%2Fheart-sm.svg?alt=media&token=2750292c-92fd-41de-8e1d-d8814119a602")
+  background: url("./bg2.svg")
     no-repeat;
   height: 264px;
   width: 299px;
@@ -37,7 +37,7 @@
   z-index: 15;
 }
 .heart-xs {
-  background: url("https://firebasestorage.googleapis.com/v0/b/codepen-asset.appspot.com/o/valentine-animation%2Fheart-xs-2.svg?alt=media&token=e542fc9c-87de-4817-a42e-3a23c42e9e92")
+  background: url("./bg3.svg")
     no-repeat;
   height: 87px;
   width: 89px;
