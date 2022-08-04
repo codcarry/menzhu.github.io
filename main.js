@@ -14,7 +14,7 @@ document.documentElement.addEventListener('click',function(){
 const love = document.querySelector(".rectangle-love");
 const wrapper = document.querySelector(".rectangle-wrapper");
 const close = document.querySelector(".close");
-const imgsArr = Array(8).fill('').map((item,i)=>`./images/${i}.jpg`)
+const imgsArr = Array(8).fill('').map((item,i)=>`./images/${i+1}.jpg`)
 love.addEventListener("click", () => {
   if (wrapper.classList.contains("animation")) {
     wrapper.classList.remove("animation");
@@ -29,7 +29,7 @@ close.addEventListener("click", () => {
 
 const imgzhuzhu = document.querySelector(".zhuzhu");
 const btn = document.querySelector(".my-button");
-imgzhuzhu.src = imgsArr[Math.ceil(Math.random() * imgsArr.length - 1)]
+imgzhuzhu.src = imgsArr[Math.ceil(Math.random() * imgsArr.length)]
 console.log(imgzhuzhu.src);
 class ShowImg {
   constructor(imgDom) {
