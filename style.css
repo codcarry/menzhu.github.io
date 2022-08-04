@@ -7,7 +7,7 @@
 .rectangle-wrapper {
   position: relative;
   display: block;
-  margin-top: -20vh;
+  margin-top: -24vh;
 }
 .rectangle {
   position: relative;
@@ -78,7 +78,7 @@
   align-self: flex-start;
 }
 .animation .card {
-  bottom: 100px;
+  bottom: 140px;
   transform: scale(1.5);
   transition-delay: 0.8s;
   z-index: 4;
@@ -119,4 +119,17 @@
   background: #c51803;
   left: -12px;
   top: 0px;
+}
+.my-button{
+  display: inline-block;
+  margin-top: 8px;
+  cursor: pointer;
+}
+.zhuzhu{
+  position: absolute;
+  z-index: 9999;
+  top: 16vh;
+  left: 50%;
+  transform: translate(-50%);
+  width: 0vw;
 }
